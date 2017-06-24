@@ -1,8 +1,8 @@
 import java.awt.BorderLayout;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
 
 import javax.swing.BoxLayout;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -14,10 +14,15 @@ public class GUI {
 	private JFrame mainFrame;
 	private JLabel lbImagePath;
 	private JTextField tfImagePath;
+	private JButton btnImport;
+	private JButton btnConvert;
+	private JButton btnExit;
 
 	public GUI() {
 		initFrame();
-		initComponents();
+		initTopComponents();
+		initPreviewComponents();
+		initBottomComponents();
 	}
 	
 	/**
@@ -33,7 +38,7 @@ public class GUI {
 		mainFrame.setLayout(new BorderLayout());
 	}
 	
-	private void initComponents() {
+	private void initTopComponents() {
 		JPanel topPanel = new JPanel();
 		topPanel.setLayout(new BoxLayout(topPanel, BoxLayout.Y_AXIS));
 		lbImagePath = new JLabel("Please enter the image path here: ");
@@ -43,5 +48,21 @@ public class GUI {
 		topPanel.add(tfImagePath);
 		topPanel.setVisible(true);
 		mainFrame.add(topPanel, BorderLayout.NORTH);
+	}
+	
+	private void initPreviewComponents() {
+		
+	}
+	
+	private void initBottomComponents() {
+		JPanel bottomPanel = new JPanel();
+		btnImport = new JButton("Import");
+		btnConvert = new JButton("Convert");
+		btnExit = new JButton("Exit");
+		bottomPanel.add(btnImport);
+		bottomPanel.add(btnConvert);
+		bottomPanel.add(btnExit);
+		bottomPanel.setVisible(true);
+		mainFrame.add(bottomPanel, BorderLayout.SOUTH);
 	}
 }
