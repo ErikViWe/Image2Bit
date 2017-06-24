@@ -8,6 +8,13 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+/**
+ * GUI class works as the user interface. This is the only window of the program.
+ * The user can operate the whole program over the components on this interface.
+ * @author Erik Weinstock
+ * @version 1.0
+ *
+ */
 public class GUI {
 	
 	
@@ -18,6 +25,9 @@ public class GUI {
 	private JButton btnConvert;
 	private JButton btnExit;
 
+	/**
+	 * Constructor generates the user interface as it generates the object and initializes the graphic components.
+	 */
 	public GUI() {
 		initFrame();
 		initTopComponents();
@@ -38,6 +48,9 @@ public class GUI {
 		mainFrame.setLayout(new BorderLayout());
 	}
 	
+	/**
+	 * Initializes the components on the top of the GUI (BoxLayout.NORTH).
+	 */
 	private void initTopComponents() {
 		JPanel topPanel = new JPanel();
 		topPanel.setLayout(new BoxLayout(topPanel, BoxLayout.Y_AXIS));
@@ -50,10 +63,17 @@ public class GUI {
 		mainFrame.add(topPanel, BorderLayout.NORTH);
 	}
 	
+	/**
+	 * Initializes the mid component to display the imported image.
+	 */
 	private void initPreviewComponents() {
 		
 	}
 	
+	/**
+	 * Initializes the buttons at the bottom of the mainFrame.
+	 * Three buttons needed to handle the program (Import, Convert, Exit).
+	 */
 	private void initBottomComponents() {
 		JPanel bottomPanel = new JPanel();
 		btnImport = new JButton("Import");
