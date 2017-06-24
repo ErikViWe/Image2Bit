@@ -1,5 +1,7 @@
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
@@ -24,6 +26,7 @@ public class GUI {
 	private JButton btnImport;
 	private JButton btnConvert;
 	private JButton btnExit;
+	
 
 	/**
 	 * Constructor generates the user interface as it generates the object and initializes the graphic components.
@@ -33,6 +36,7 @@ public class GUI {
 		initTopComponents();
 		initPreviewComponents();
 		initBottomComponents();
+		initButtonListener();
 	}
 	
 	/**
@@ -67,7 +71,7 @@ public class GUI {
 	 * Initializes the mid component to display the imported image.
 	 */
 	private void initPreviewComponents() {
-		
+		//TODO implement image preview
 	}
 	
 	/**
@@ -84,5 +88,33 @@ public class GUI {
 		bottomPanel.add(btnExit);
 		bottomPanel.setVisible(true);
 		mainFrame.add(bottomPanel, BorderLayout.SOUTH);
+	}
+	
+	private void initButtonListener() {
+		btnImport.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				importImage();
+			}
+		});
+		
+		btnConvert.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				convertImage();
+			}
+		});
+		
+		btnExit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
+		});
+	}
+	
+	private void importImage() {
+		//TODO implement import
+	}
+	
+	private void convertImage() {
+		//TODO implement convert
 	}
 }
