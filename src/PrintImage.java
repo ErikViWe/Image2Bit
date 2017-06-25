@@ -11,10 +11,23 @@ import java.io.Writer;
  */
 public class PrintImage {
 
+	/**
+	 * Constructor generates the object only.
+	 */
 	public PrintImage() {
 		
 	}
 	
+	/**
+	 * Generates a new .txt file at the given path and prints the bits into this file.
+	 * the current printing format is 10 pixel per line.
+	 * @param bits
+	 * 		contains all pits to print as single Strings
+	 * @param path
+	 * 		path where the output file should be stored
+	 * @return
+	 * 		<b>true</b> if the process was successful
+	 */
 	public boolean printFile(String[][] bits, String path) {
 		String filepath = path.substring(0, path.length() - 3) + "txt"; //saves the file with the same name but .txt format
 		try{
