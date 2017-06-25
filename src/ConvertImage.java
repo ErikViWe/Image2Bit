@@ -1,3 +1,4 @@
+import java.awt.image.BufferedImage;
 
 /**
  * This class contains all methods dealing with the imported image.
@@ -10,6 +11,10 @@ public class ConvertImage {
 	
 	public ConvertImage() {
 		
+	}
+	
+	public boolean convert(BufferedImage image) {
+		return false;
 	}
 
 }

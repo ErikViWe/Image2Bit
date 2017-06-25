@@ -120,10 +120,18 @@ public class GUI {
 	
 	private void importImage() {
 		image = importer.importImageFromPath(tfImagePath.getText());
-		
+		if (image == null) {
+			lbStatus.setText("Error, invalid path or file.");
+		} else {
+			lbStatus.setText("Status: Image successfully imported.");
+		}
 	}
 	
 	private void convertImage() {
-		//TODO implement convert
+		if (converter.convert(image)) {
+			lbStatus.setText("Status: Image successfully converted.");
+		} else {
+			lbStatus.setText("Error, converter was not abel to convert the image.");
+		}
 	}
 }
