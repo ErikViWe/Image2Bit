@@ -22,6 +22,7 @@ public class GUI {
 	
 	private ImportImage importer;
 	private ConvertImage converter;
+	private PrintImage printer;
 	private JFrame mainFrame;
 	private JLabel lbImagePath;
 	private JTextField tfImagePath;
@@ -43,6 +44,7 @@ public class GUI {
 		initButtonListener();
 		importer = new ImportImage();
 		converter = new ConvertImage();
+		printer = new PrintImage();
 	}
 	
 	/**
@@ -137,5 +139,6 @@ public class GUI {
 	 */
 	private void convertImage() {
 		String[][] bits = converter.convert(image);
+		printer.printFile(bits, tfImagePath.getText());
 	}
 }
