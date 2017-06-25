@@ -2,6 +2,7 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
@@ -19,13 +20,16 @@ import javax.swing.JTextField;
  */
 public class GUI {
 	
-	
+	private ImportImage importer;
+	private ConvertImage converter;
 	private JFrame mainFrame;
 	private JLabel lbImagePath;
 	private JTextField tfImagePath;
+	private JLabel lbStatus;
 	private JButton btnImport;
 	private JButton btnConvert;
 	private JButton btnExit;
+	private BufferedImage image;
 	
 
 	/**
@@ -37,6 +41,8 @@ public class GUI {
 		initPreviewComponents();
 		initBottomComponents();
 		initButtonListener();
+		importer = new ImportImage();
+		converter = new ConvertImage();
 	}
 	
 	/**
@@ -63,6 +69,8 @@ public class GUI {
 		tfImagePath = new JTextField();
 		tfImagePath.setSize(new Dimension(200, 20));
 		topPanel.add(tfImagePath);
+		lbStatus = new JLabel("Status: Please enter a path and import an image.");
+		topPanel.add(lbStatus);
 		topPanel.setVisible(true);
 		mainFrame.add(topPanel, BorderLayout.NORTH);
 	}
@@ -111,7 +119,8 @@ public class GUI {
 	}
 	
 	private void importImage() {
-		//TODO implement import
+		image = importer.importImageFromPath(tfImagePath.getText());
+		
 	}
 	
 	private void convertImage() {
