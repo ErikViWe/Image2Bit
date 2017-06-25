@@ -118,6 +118,10 @@ public class GUI {
 		});
 	}
 	
+	/**
+	 * Executes the importImage method of the importer and checks if the import
+	 * is not <b> null <b>.
+	 */
 	private void importImage() {
 		image = importer.importImageFromPath(tfImagePath.getText());
 		if (image == null) {
@@ -127,6 +131,9 @@ public class GUI {
 		}
 	}
 	
+	/**
+	 * Executes the convert method of the converter and checks if the conversion has been successful.
+	 */
 	private void convertImage() {
 		if (converter.convert(image)) {
 			lbStatus.setText("Status: Image successfully converted.");
