@@ -132,13 +132,10 @@ public class GUI {
 	}
 	
 	/**
-	 * Executes the convert method of the converter and checks if the conversion has been successful.
+	 * Executes the convert method of the converter and prints the result by
+	 * using the printFile method of the PrintImage class.
 	 */
 	private void convertImage() {
-		if (converter.convert(image)) {
-			lbStatus.setText("Status: Image successfully converted.");
-		} else {
-			lbStatus.setText("Error, converter was not abel to convert the image.");
-		}
+		String[][] bits = converter.convert(image);
 	}
 }
