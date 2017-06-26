@@ -19,7 +19,7 @@ public class ConvertImage {
 		//fill the array
 		for (int i = 0; i < image.getHeight(); i++) {
 			for (int j = 0; j < image.getWidth(); j++) {
-				Color c = new Color(image.getRGB(i, j));
+				Color c = new Color(image.getRGB(j, i));
 				//divide by 16 to reduce
 				int[] colors = new int[3]; // r, g, b
 				colors[0] = c.getRed() / 16;
