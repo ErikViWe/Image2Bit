@@ -146,7 +146,11 @@ public class GUI {
 	 */
 	private void convertImage() {
 		String[][] bits = converter.convert(image);
-		printer.printFile(bits, tfImagePath.getText());
+		if (printer.printFile(bits, tfImagePath.getText())) {
+			lbStatus.setText("Status: conversion has been successful.");
+		} else {
+			lbStatus.setText("Error, program was not able to store the converted image.");
+		}
 	}
 	
 	/**
