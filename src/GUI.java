@@ -149,6 +149,11 @@ public class GUI {
 		printer.printFile(bits, tfImagePath.getText());
 	}
 	
+	/**
+	 * Displays the imported image inside the JLabel lbPreview.
+	 * Method gets called only if image has been imported successfully.
+	 * No checks needed.
+	 */
 	private void displayImage() {
 		Image temp = image.getScaledInstance(300, 300, 0);
 		ImageIcon icon = new ImageIcon(temp);
