@@ -1,10 +1,12 @@
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 
 import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -27,6 +29,7 @@ public class GUI {
 	private JLabel lbImagePath;
 	private JTextField tfImagePath;
 	private JLabel lbStatus;
+	private JLabel lbPreview;
 	private JButton btnImport;
 	private JButton btnConvert;
 	private JButton btnExit;
@@ -81,7 +84,10 @@ public class GUI {
 	 * Initializes the mid component to display the imported image.
 	 */
 	private void initPreviewComponents() {
-		//TODO implement image preview
+		lbPreview = new JLabel("");
+		lbPreview.setHorizontalAlignment(JLabel.CENTER);
+		lbPreview.setVerticalAlignment(JLabel.CENTER);
+		mainFrame.add(lbPreview, BorderLayout.CENTER);
 	}
 	
 	/**
@@ -130,6 +136,7 @@ public class GUI {
 			lbStatus.setText("Error, invalid path or file.");
 		} else {
 			lbStatus.setText("Status: Image successfully imported.");
+			displayImage();
 		}
 	}
 	
@@ -140,5 +147,11 @@ public class GUI {
 	private void convertImage() {
 		String[][] bits = converter.convert(image);
 		printer.printFile(bits, tfImagePath.getText());
+	}
+	
+	private void displayImage() {
+		Image temp = image.getScaledInstance(300, 300, 0);
+		ImageIcon icon = new ImageIcon(temp);
+		lbPreview.setIcon(icon);
 	}
 }
