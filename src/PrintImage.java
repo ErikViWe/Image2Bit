@@ -37,9 +37,10 @@ public class PrintImage {
 
 	        int counter = 0;
 	        StringBuilder str = new StringBuilder();
+	        str.append("(");
 	        for (int i = 0; i < bits.length; i++) {
 	        	for (int j = 0; j < bits[0].length; j++) {
-	        		str.append(bits[i][j] + " ");
+	        		str.append("\"" + bits[i][j] + "\", ");
 	        		counter++;
 	        		if (counter == 10) {
 	        			str.append("\n");
@@ -47,6 +48,8 @@ public class PrintImage {
 	        		}
 	        	}
 	        }
+	        str.replace(str.length() -2, str.length(), "");
+	        str.append(")");
 	        output.write(str.toString());
 	        output.close();
 	    }catch(Exception e){
