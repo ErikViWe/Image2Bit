@@ -35,17 +35,19 @@ public class PrintImage {
 	        file.createNewFile();
 	        Writer output = new BufferedWriter(new FileWriter(file));
 
-	        int counter = 0;
+	        //remove comments to add line breaks
+	        //int counter = 0;
 	        StringBuilder str = new StringBuilder();
 	        str.append("(");
 	        for (int i = 0; i < bits.length; i++) {
 	        	for (int j = 0; j < bits[0].length; j++) {
 	        		str.append("\"" + bits[i][j] + "\", ");
+	        		/*
 	        		counter++;
 	        		if (counter == 10) {
 	        			str.append("\n");
 	        			counter = 0;
-	        		}
+	        		} */
 	        	}
 	        }
 	        str.replace(str.length() - 3, str.length(), "");
