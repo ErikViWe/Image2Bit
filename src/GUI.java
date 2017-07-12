@@ -45,6 +45,7 @@ public class GUI {
 		initPreviewComponents();
 		initBottomComponents();
 		initButtonListener();
+		mainFrame.setVisible(true);
 		importer = new ImportImage();
 		converter = new ConvertImage();
 		printer = new PrintImage();
@@ -59,7 +60,6 @@ public class GUI {
 		mainFrame = new JFrame();
 		mainFrame.setTitle("Image2Bit");
 		mainFrame.setSize(new Dimension(400, 400));
-		mainFrame.setVisible(true);
 		mainFrame.setLayout(new BorderLayout());
 	}
 	
