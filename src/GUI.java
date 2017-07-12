@@ -45,10 +45,16 @@ public class GUI {
 		initPreviewComponents();
 		initBottomComponents();
 		initButtonListener();
-		mainFrame.setVisible(true);
 		importer = new ImportImage();
 		converter = new ConvertImage();
 		printer = new PrintImage();
+	}
+	
+	/**
+	 * Reloads the mainFrame object
+	 */
+	public void show() {
+		mainFrame.setVisible(true);
 	}
 	
 	/**
