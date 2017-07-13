@@ -50,7 +50,7 @@ public class PrintImage {
 	        		} */
 	        	}
 	        }
-	        str.replace(str.length() - 3, str.length(), "");
+	        str.replace(str.length() - 2, str.length(), "");
 	        str.append(")");
 	        output.write(str.toString());
 	        output.close();
